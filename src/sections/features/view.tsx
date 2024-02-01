@@ -8,7 +8,6 @@ import { RootState } from "../../utils/redux/store";
 
 const FeaturesView: React.FC = () => {
   const commonState = useSelector((state: RootState) => state.common);
-  console.log(commonState);
   return (
     <React.Fragment>
       <Box width="100%">

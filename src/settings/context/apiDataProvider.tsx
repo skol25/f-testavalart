@@ -36,7 +36,6 @@ const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
         getCommonAndDispatch(dispatch);
       } catch (error) {
         console.error("Error fetching data:", error);
-        // Manejar el error según tus necesidades
       }
     };
 
