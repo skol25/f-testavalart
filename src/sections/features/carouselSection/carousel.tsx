@@ -7,6 +7,7 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useMediaQuery, useTheme } from "@mui/material";
 interface CarouselProps {
   items: {
     id: number;
@@ -81,7 +82,6 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
 
   const handleArrowClick = (onClick: any, arrowType: string) => {
     onClick();
-    // Puedes realizar otras acciones específicas para cada botón si es necesario
   };
 
   const settings = {
@@ -94,9 +94,10 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
     autoplay: true,
     autoplaySpeed: 4000,
   };
-
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <Box width={400} height="auto">
+    <Box width={isMobile ? 250 : 400} height="auto">
       <Slider ref={(slider) => setSliderRef(slider)} {...settings}>
         {items.map((item) => (
           <Box key={item.id} textAlign="left">

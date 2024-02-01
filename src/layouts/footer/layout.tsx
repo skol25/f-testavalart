@@ -1,15 +1,4 @@
-import React from "react";
-import {
-  Box,
-  Typography,
-  TextField,
-  Button,
-  useTheme,
-  FormControl,
-  OutlinedInput,
-  InputLabel,
-  FormHelperText,
-} from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 export default function FooterLayout() {
   return (

@@ -1,13 +1,18 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Hidden from "@mui/material/Hidden";
 import Carousel from "./carousel";
 import { BlueBoxWithImageProps } from "../../../types/carouselTypes";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 const BlueBoxWithImage: React.FC<BlueBoxWithImageProps> = ({
   carouselItems,
 }) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Box display="flex">
       <Box
@@ -34,7 +39,7 @@ const BlueBoxWithImage: React.FC<BlueBoxWithImageProps> = ({
         </Box>
       </Box>
       <Hidden xsDown>
-        <Box flex={1.5}>
+        <Box flex={1.5} display={isMobile ? "none" : "block"}>
           <img
             src={"/assets/images/Image_carousel.svg"}
             alt="Right Image"

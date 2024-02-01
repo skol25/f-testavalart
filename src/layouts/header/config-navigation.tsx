@@ -1,32 +1,33 @@
-import { useMemo } from 'react';
+import { useMemo } from "react";
 // routes
-// components
-import Icon from '@mui/material/Icon';
-// import { IconsMui } from '@/assets/icons/icons';
-import { NavConfigProps, NavSectionProps } from '../../types/navSectionTypes/index';
-import { paths } from '../../routes/paths';
+
+import {
+  NavConfigProps,
+  NavSectionProps,
+} from "../../types/navSectionTypes/index";
+import { paths } from "../../routes/paths";
 
 // ----------------------------------------------------------------------
-const CustomIcon = ({ name }: { name: any }) => <Icon component={name} />;
+// const CustomIcon = ({ name }: { name: any }) => <Icon component={name} />;
 
-// const ICONS = {
-//     home: CustomIcon(IconsMui.home),
+// // const ICONS = {
+// //     home: CustomIcon(IconsMui.home),
 
-//   };
+// //   };
 
 // ----------------------------------------------------------------------
 
 export function useNavData(): NavSectionProps {
-  const data: NavSectionProps['data'] = useMemo(
+  const data: NavSectionProps["data"] = useMemo(
     () => [
       // OVERVIEW
       // ----------------------------------------------------------------------
       {
-        subheader: 'Home',
+        subheader: "Home",
         items: [
-          { title: 'Introduction', path: paths.home.root, icon: '' },
-          { title: 'Getting Started', path: paths.home.root, icon: '' },
-          { title: 'HTTP request', path: paths.home.root, icon: '' },
+          { title: "Introduction", path: paths.home.root, icon: "" },
+          { title: "Getting Started", path: paths.home.root, icon: "" },
+          { title: "HTTP request", path: paths.home.root, icon: "" },
         ],
       },
 
