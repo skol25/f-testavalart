@@ -62,7 +62,17 @@ To make design decisions, I utilized Figma, a tool I commonly use to showcase in
 
 ## Tools
 
-- Figma: Utilized for designing and presenting interfaces.
+- Figma: Design tool for brainstorming and visualizing the final design.
+
+- React: Framework used for the development phase.
+
+- Mui (Material-UI): Component library for creating consistent and appealing interfaces.
+
+- Typescript: Language chosen for enhanced code maintainability.
+
+- react-redux: State management tool for efficient application state handling.
+
+- i18next: Facilitates language localization within the app.
 
 ## Mockup Proposal
 
