@@ -14,7 +14,6 @@ const DynamicSelect: React.FC<DynamicSelectProps> = ({ options, onSelect }) => {
 
   return (
     <select onChange={handleSelectChange}>
-      <option value="">Selecciona una opción</option>
       {options.map((option, index) => (
         <option key={index} value={option}>
           {option}

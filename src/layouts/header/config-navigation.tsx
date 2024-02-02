@@ -1,6 +1,6 @@
 import { useMemo } from "react";
-// routes
 
+// Importing necessary types and paths
 import {
   NavConfigProps,
   NavSectionProps,
@@ -8,30 +8,31 @@ import {
 import { paths } from "../../routes/paths";
 
 // ----------------------------------------------------------------------
+// Placeholder for potential future customization with icons
 // const CustomIcon = ({ name }: { name: any }) => <Icon component={name} />;
-
-// // const ICONS = {
-// //     home: CustomIcon(IconsMui.home),
-
-// //   };
+// const ICONS = {
+//   home: CustomIcon(IconsMui.home),
+// };
 
 // ----------------------------------------------------------------------
 
+// Function to generate navigation data using useMemo
 export function useNavData(): NavSectionProps {
   const data: NavSectionProps["data"] = useMemo(
     () => [
-      // OVERVIEW
+      // Link 1: Home section with submenu items
       // ----------------------------------------------------------------------
       {
         subheader: "Home",
         items: [
           { title: "Introduction", path: paths.home.root, icon: "" },
-          { title: "Getting Started", path: paths.home.root, icon: "" },
-          { title: "HTTP request", path: paths.home.root, icon: "" },
+          // Additional submenu items can be added here
+          // { title: "Getting Started", path: paths.home.root, icon: "" },
+          // { title: "HTTP request", path: paths.home.root, icon: "" },
         ],
       },
 
-      // MANAGEMENT
+      // Link 2: Example of submenu sections (commented out for simplicity)
       // ----------------------------------------------------------------------
       // {
       //   subheader: 'About',
@@ -61,7 +62,7 @@ export function useNavData(): NavSectionProps {
     []
   );
 
-  const navConfig: NavConfigProps = {}; // Ajusta según tus necesidades
+  const navConfig: NavConfigProps = {}; // Adjust as needed for customization
 
   return {
     data,

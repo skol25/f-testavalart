@@ -3,19 +3,24 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Hidden from "@mui/material/Hidden";
-import Carousel from "./carousel";
+import Carousel from "./carousel"; // Importing the Carousel component
 import { BlueBoxWithImageProps } from "../../../types/carouselTypes";
 import { useMediaQuery, useTheme } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
+// BlueBoxWithImageProps is an interface for the component props
+
 const BlueBoxWithImage: React.FC<BlueBoxWithImageProps> = ({
   carouselItems,
 }) => {
+  // Using MUI theme and media query hooks
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const { t } = useTranslation();
+  const { t } = useTranslation(); // i18n translation hook
+
   return (
     <Box display="flex">
+      {/* Left side content */}
       <Box
         flex={1}
         display="flex"
@@ -36,9 +41,12 @@ const BlueBoxWithImage: React.FC<BlueBoxWithImageProps> = ({
           <Typography flex={1}>{t(`BenefitsT`)}</Typography>
         </Box>
         <Box>
+          {/* Carousel component usage */}
           <Carousel items={carouselItems}></Carousel>
         </Box>
       </Box>
+
+      {/* Right side image, hidden on smaller screens */}
       <Hidden xsDown>
         <Box flex={1.5} display={isMobile ? "none" : "block"}>
           <img

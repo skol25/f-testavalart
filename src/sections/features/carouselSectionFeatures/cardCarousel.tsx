@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 
 interface CustomCardProps {
   title: string;
-  icon: string; // Cambia el tipo a string para la ruta del icono
+  icon: string;
   onClick: () => void;
   selected: boolean;
   id: number;

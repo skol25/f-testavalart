@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Box from "@mui/material/Box";
@@ -9,6 +10,7 @@ import CustomCard from "./cardCarousel";
 import { useMediaQuery, useTheme } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
+// Define the data structure for each carousel item
 interface CarouselCardItem {
   id: number;
   iconName: string;
@@ -16,10 +18,12 @@ interface CarouselCardItem {
   content: string;
 }
 
+// Define the props for the CarouselSectionFeatures component
 interface CarouselProps {
   items: CarouselCardItem[];
 }
 
+// Main CarouselSectionFeatures component
 const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
   const [selectedItem, setSelectedItem] = useState<CarouselCardItem | null>(
     null
@@ -31,6 +35,7 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
 
   const [sliderRef, setSliderRef] = useState<Slider | null>(null);
 
+  // Custom arrow components for the slider
   const NextArrow = () => (
     <IconButton
       onClick={() => sliderRef?.slickNext()}
@@ -63,17 +68,20 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
     </IconButton>
   );
 
+  // Handle click on a card to update the selected item and navigate to it in the slider
   const handleCardClick = (item: CarouselCardItem) => {
     setSelectedItem(item);
     sliderRef?.slickGoTo(items.indexOf(item));
   };
 
+  // Set the initial selected item when the component mounts
   useEffect(() => {
     if (items.length > 0 && !selectedItem) {
       setSelectedItem(items[0]);
     }
   }, [items, selectedItem]);
 
+  // Slider settings
   const settings = {
     dots: false,
     infinite: true,
@@ -84,7 +92,6 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
     autoplay: true,
     autoplaySpeed: 3000,
     afterChange: (index: number) => setSelectedItem(items[index]),
-
     responsive: [
       {
         breakpoint: 1024,
@@ -104,12 +111,14 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
   return (
     <>
       {isMobile ? (
+        // Mobile view
         <>
           <Box>
+            {/* Background image for mobile */}
             <img
               src="/assets/images/bg_features.svg"
-              alt="Descripción de la imagen"
-              style={{ width: "100%", height: "auto", objectFit: "cover" }} // Ajusta el tamaño según tus necesidades
+              alt="Image description"
+              style={{ width: "100%", height: "auto", objectFit: "cover" }}
             />
           </Box>
           <Box
@@ -117,6 +126,7 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
               marginTop: -5,
             }}
           >
+            {/* Slider for mobile view */}
             <Slider ref={(slider) => setSliderRef(slider)} {...settings}>
               {items.map((item) => (
                 <CustomCard
@@ -130,6 +140,7 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
               ))}
             </Slider>
           </Box>
+          {/* Details and navigation arrows for mobile view */}
           <Box
             display="flex"
             flexDirection="column"
@@ -174,15 +185,15 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
             </Box>
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <PrevArrow />
-
               <NextArrow />
             </Box>
           </Box>
         </>
       ) : (
-        // Muestra el diseño original en dispositivos más grandes
+        // Desktop view
         <Box width={isMobile ? 200 : "100%"} height="auto">
           <Box display="flex" justifyContent="space-between">
+            {/* Left side content for desktop view */}
             <Box
               display="flex"
               flexDirection="column"
@@ -220,18 +231,16 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
                 )}
               </Box>
             </Box>
-            <Box
-              textAlign="right"
-              flexBasis="50%" // La mitad del espacio para esta caja
-            >
-              {/* Aquí puedes colocar tu imagen */}
+            {/* Right side image for desktop view */}
+            <Box textAlign="right" flexBasis="50%">
               <img
                 src="/assets/images/bg_features.svg"
-                alt="Descripción de la imagen"
-                style={{ width: "100%", height: "auto", objectFit: "cover" }} // Ajusta el tamaño según tus necesidades
+                alt="Image description"
+                style={{ width: "100%", height: "auto", objectFit: "cover" }}
               />
             </Box>
           </Box>
+          {/* Slider for desktop view */}
           <Box
             sx={{
               marginTop: -5,
@@ -250,6 +259,7 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
               ))}
             </Slider>
           </Box>
+          {/* Navigation arrows for desktop view */}
           <Box display="flex" mt={2} gap={2} paddingLeft={2}>
             <PrevArrow />
             <NextArrow />

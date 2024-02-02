@@ -1,3 +1,4 @@
+// Importing necessary components and functions from React and Material-UI
 import React, { useState } from "react";
 import {
   Box,
@@ -13,58 +14,43 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useNavData } from "./config-navigation";
-import { useTranslation } from "react-i18next";
 import LanguageSelector from "./languajeSelector";
+import { Link } from "react-router-dom";
 
-interface HeaderProps {
-  title: string;
-}
+const Header: React.FC = () => {
+  // Fetch navigation data using custom hook
+  const { data: navData } = useNavData();
 
-const Header: React.FC<HeaderProps> = ({ title }) => {
+  // State to manage the open/close state of the drawer
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  // Scroll trigger hook
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
   });
 
-  const { t } = useTranslation();
-  const [drawerOpen, setDrawerOpen] = useState(false);
-
+  // Toggle function for opening/closing the drawer
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
   };
-
-  const handleButtonClick = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-
-    setDrawerOpen(false);
-  };
-
-  const { data: navData } = useNavData();
-
-  const bgColor = "#01478F";
 
   return (
     <Box
       component="header"
       sx={{
         position: trigger ? "fixed" : "sticky",
-        backgroundColor: bgColor,
+        backgroundColor: "#01478F",
         width: "100%",
         zIndex: 10,
         borderBottom: "0.5px solid #00000020",
-        transition: "background-color 0.3s ease-out", // Agregar la transición
+        transition: "background-color 0.3s ease-out",
       }}
     >
+      {/* Toolbar container */}
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-        {/* Contenedor del menú hamburguesa y títulos para versiones de escritorio */}
-
-        <LanguageSelector></LanguageSelector>
-
+        {/* Left section with language selector and hamburger menu for mobile */}
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          {/* Menú hamburguesa para dispositivos móviles */}
           <IconButton
             edge="start"
             color="inherit"
@@ -75,41 +61,44 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
             <MenuIcon />
           </IconButton>
 
-          {/* Títulos para versiones de escritorio */}
+          {/* Titles for desktop version */}
           <Typography
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", md: "block" } }}
           >
             {navData.map((section, index) => (
-              <Button
+              <Link
                 key={index}
-                color="inherit"
-                onClick={() => handleButtonClick(section.subheader)}
+                to={section.items[0].path}
+                style={{ textDecoration: "none" }}
               >
-                {section.subheader}
-              </Button>
+                <Button color="primary">{section.subheader}</Button>
+              </Link>
             ))}
           </Typography>
         </Box>
 
-        {/* Menú Drawer para dispositivos móviles */}
+        {/* Right section with Drawer for mobile devices */}
         <Drawer anchor="left" open={drawerOpen} onClose={handleDrawerToggle}>
           <List>
             {navData.map((section, index) => (
-              <ListItem
-                button
+              <Link
                 key={index}
-                onClick={() => handleButtonClick(section.subheader)}
+                to={section.items[0].path}
+                style={{ textDecoration: "none" }}
               >
-                <ListItemText
-                  sx={{ color: "#232B35" }}
-                  primary={section.subheader}
-                />
-              </ListItem>
+                <ListItem button>
+                  <ListItemText
+                    sx={{ color: "#232B35" }}
+                    primary={section.subheader}
+                  />
+                </ListItem>
+              </Link>
             ))}
           </List>
         </Drawer>
+        <LanguageSelector></LanguageSelector>
       </Toolbar>
     </Box>
   );

@@ -1,7 +1,9 @@
 import Box, { BoxProps } from "@mui/material/Box";
 
+// Main functional component with BoxProps as the prop type
 export default function Main({ children, sx, ...other }: BoxProps) {
   return (
+    // Using MUI Box component as the main container
     <Box
       component="main"
       sx={{
@@ -12,12 +14,15 @@ export default function Main({ children, sx, ...other }: BoxProps) {
         padding: 0,
         margin: 0,
 
-        // py: SPACING, // Ajustar el espacio de relleno en todos los lados (por ejemplo, triple del SPACING)
-        ...sx, // Incluir estilos adicionales proporcionados como prop
+        // Uncomment the line below and adjust the SPACING variable if needed
+        // py: SPACING, // Adjust padding space on all sides (e.g., triple of SPACING)
+
+        // Include additional styles provided as prop
+        ...sx,
       }}
-      {...other}
+      {...other} // Spread any other props passed to the component
     >
-      {children}
+      {children} {/* Render child components */}
     </Box>
   );
 }
