@@ -224,7 +224,15 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
               <Box textAlign="left">
                 {selectedItem && (
                   <div>
-                    <Typography variant="body2" style={{ color: "#092E54" }}>
+                    <Typography
+                      variant="body2"
+                      style={{
+                        color: "#092E54",
+                        padding: 2,
+                        overflow: "hidden", // Evitar saltos de línea y ocultar el desbordamiento
+                        textOverflow: "ellipsis", // Mostrar puntos suspensivos si se desborda
+                      }}
+                    >
                       {t(`FeaturesContent.t-${selectedItem.id}`)}
                     </Typography>
                   </div>
@@ -232,11 +240,15 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
               </Box>
             </Box>
             {/* Right side image for desktop view */}
-            <Box textAlign="right" flexBasis="50%">
+            <Box textAlign="right" flexBasis="50%" position="relative">
               <img
                 src="/assets/images/bg_features.svg"
                 alt="Image description"
-                style={{ width: "100%", height: "auto", objectFit: "cover" }}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
               />
             </Box>
           </Box>
@@ -244,6 +256,7 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
           <Box
             sx={{
               marginTop: -5,
+              paddingLeft: 9,
             }}
           >
             <Slider ref={(slider) => setSliderRef(slider)} {...settings}>

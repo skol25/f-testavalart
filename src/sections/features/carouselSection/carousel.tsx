@@ -9,7 +9,7 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { useMediaQuery, useTheme } from "@mui/material";
+import { IconButton, useMediaQuery, useTheme } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 // Interface for the CarouselProps
@@ -23,70 +23,40 @@ interface CarouselProps {
 
 // Main Carousel component
 const Carousel: React.FC<CarouselProps> = ({ items }) => {
-  // State for hover effect on navigation arrows
-  const [isPrevHovered, setIsPrevHovered] = useState(false);
-  const [isNextHovered, setIsNextHovered] = useState(false);
-
   // State for the Slider reference
   const [sliderRef, setSliderRef] = useState<Slider | null>(null);
 
   // Arrow components with hover effect
-  const NextArrow = ({ onClick }: any) => (
-    <div
-      onClick={() => handleArrowClick(onClick, "next")}
-      onMouseEnter={() => setIsNextHovered(true)}
-      onMouseLeave={() => setIsNextHovered(false)}
-    >
-      <div
-        style={{
-          transform: "translateY(-50%)",
-          width: 25,
-          height: 25,
-          backgroundColor: "white",
-          borderRadius: "50%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          cursor: "pointer",
-          boxShadow: "0px 4px 8px rgba(151, 151, 151, 0.5)",
-          transition: "transform 0.3s",
-          ...(isNextHovered && { transform: "translateY(-50%) scale(1.2)" }),
-        }}
-      >
-        <div className="bg-white">
-          <NavigateNextIcon style={{ color: "orange" }} />
-        </div>
-      </div>
-    </div>
-  );
 
-  const PrevArrow = ({ onClick }: any) => (
-    <div
+  const NextArrow = ({ onClick }: any) => (
+    <IconButton
       onClick={() => handleArrowClick(onClick, "prev")}
-      onMouseEnter={() => setIsPrevHovered(true)}
-      onMouseLeave={() => setIsPrevHovered(false)}
+      style={{
+        backgroundColor: "white",
+        borderRadius: "50%",
+        border: "2px solid #fff",
+        width: "40px",
+        height: "40px",
+        boxShadow: "0px 4px 8px rgba(151, 151, 151, 0.5)",
+      }}
     >
-      <div
-        style={{
-          transform: "translateY(-50%)",
-          width: 25,
-          height: 25,
-          backgroundColor: "white",
-          borderRadius: "50%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          cursor: "pointer",
-          boxShadow: "0px 4px 8px rgba(151, 151, 151, 0.5)",
-          transition: "transform 0.3s",
-          ...(isPrevHovered && { transform: "translateY(-50%) scale(1.2)" }),
-        }}
-      >
-        <div className="bg-white shadow-md shadow-gray-500 h-[35px] w-[35px] rounded-full grid place-items-center">
-          <NavigateBeforeIcon style={{ color: "orange" }} />
-        </div>
-      </div>
-    </div>
+      <NavigateNextIcon style={{ color: "orange" }} />
+    </IconButton>
+  );
+  const PrevArrow = ({ onClick }: any) => (
+    <IconButton
+      onClick={() => handleArrowClick(onClick, "prev")}
+      style={{
+        backgroundColor: "white",
+        borderRadius: "50%",
+        border: "2px solid #fff",
+        width: "40px",
+        height: "40px",
+        boxShadow: "0px 4px 8px rgba(151, 151, 151, 0.5)",
+      }}
+    >
+      <NavigateBeforeIcon style={{ color: "orange" }} />
+    </IconButton>
   );
 
   // Handle arrow click, you can extend it further if needed

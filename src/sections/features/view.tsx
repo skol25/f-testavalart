@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import React from "react";
-import BlueBoxWithImage from "./carouselSection/blueBoxWithImage";
+import BlueBoxWithImage from "./carouselSection/view";
 import CenteredText from "../../components/centeredText/centeredText";
 import CarouselSectionFeatures from "./carouselSectionFeatures/view";
 import { useSelector } from "react-redux";
