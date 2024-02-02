@@ -8,6 +8,18 @@
 
 Note: The mock must be run separately due to an issue when combining commands within `npm start`.
 
+## Design Concept
+
+The design was crafted based on several ideas, utilizing carousels to provide a better user experience without excessive scrolling. The goal was to create an interactive and comfortable environment for users to explore feature information. The design consists of two main sections:
+
+Also you can find the design here:https://www.figma.com/file/zgbsaDBkMSmNd1m87tOvz4/evalart-design?type=design&node-id=0%3A1&mode=design&t=vhfnRPTgxLDZ8qWu-1
+
+1. Benefits Carousel
+   In the first part, a carousel showcases various benefits in an interactive and visually appealing manner. Users can easily navigate through the benefits, making it a seamless experience.
+
+2. Features Carousel
+   Below the benefits section, another carousel is implemented, showcasing features in a distinctive style. This carousel is designed to present features in an engaging and user-friendly way, ensuring an immersive exploration of the app's capabilities.
+
 ## Overview
 
 This redesign of the features page aimed to enhance the development process by initially dedicating time to creating a design in Figma. The design presented ideas and outlined the final appearance of the page. This phase took approximately 30 minutes as it involved designing a view with two sections. My workflow typically involves having a design direction before coding to streamline development and reduce changes later on, ensuring efficiency.
