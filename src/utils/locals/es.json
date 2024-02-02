@@ -1,5 +1,7 @@
 {
 
+  "BenefitsT":"Beneficios",
+
   "BenefitsTitle":{
     "t-1":"Encuentra a los Mejores",
     "t-2":"Ahorra Tiempo",
@@ -14,6 +16,9 @@
     "t-4":"En cualquier momento puedes ver el estado de todos tus procesos de evaluación. Cuántas personas han respondido, quién tiene la mejor puntuación... toda la información que necesitas está a solo un clic de distancia. La información se almacena automáticamente en Evalart, por lo que puedes buscar candidatos de procesos anteriores incluso años después para tus nuevos procesos."
     
   },
+
+  "FeaturesT":"Caracteristicas",
+
 
   "FeaturesTitle": {
     "t-1": "BIBLIOTECA DE PRUEBAS",

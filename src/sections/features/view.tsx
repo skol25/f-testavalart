@@ -5,9 +5,11 @@ import CenteredText from "../../components/centeredText/centeredText";
 import CarouselSectionFeatures from "./carouselSectionFeatures/view";
 import { useSelector } from "react-redux";
 import { RootState } from "../../utils/redux/store";
+import { useTranslation } from "react-i18next";
 
 const FeaturesView: React.FC = () => {
   const commonState = useSelector((state: RootState) => state.common);
+  const { t } = useTranslation();
   return (
     <React.Fragment>
       <Box width="100%">
@@ -15,7 +17,7 @@ const FeaturesView: React.FC = () => {
         <BlueBoxWithImage
           carouselItems={commonState.commonData.Benefits}
         ></BlueBoxWithImage>
-        <CenteredText text={"FEATURES"}></CenteredText>
+        <CenteredText text={t(`FeaturesT`)}></CenteredText>
         <CarouselSectionFeatures
           items={commonState.commonData.FEATURES}
         ></CarouselSectionFeatures>

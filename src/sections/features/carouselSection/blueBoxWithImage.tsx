@@ -6,13 +6,14 @@ import Hidden from "@mui/material/Hidden";
 import Carousel from "./carousel";
 import { BlueBoxWithImageProps } from "../../../types/carouselTypes";
 import { useMediaQuery, useTheme } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const BlueBoxWithImage: React.FC<BlueBoxWithImageProps> = ({
   carouselItems,
 }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
+  const { t } = useTranslation();
   return (
     <Box display="flex">
       <Box
@@ -32,7 +33,7 @@ const BlueBoxWithImage: React.FC<BlueBoxWithImageProps> = ({
             width="0.5em"
             marginRight="0.5em"
           />
-          <Typography flex={1}>Beneficios</Typography>
+          <Typography flex={1}>{t(`BenefitsT`)}</Typography>
         </Box>
         <Box>
           <Carousel items={carouselItems}></Carousel>

@@ -1,6 +1,6 @@
 
 {
-
+  "BenefitsT":"Benefits",
   
   "BenefitsTitle":{
     "t-1":"Find The Best",
@@ -16,7 +16,7 @@
     "t-4":"At any time you can view the status of all your evaluation processes. How many people have responded, who has the best score... all the information you need is only a click away. The information is automatically stored in Evalart, so you can search for candidates from previous processes for your new processes even years later."
     
   },
-
+  "FeaturesT":"Features",
     
   "FeaturesTitle": {
     "t-1": "TEST LIBRARY",
