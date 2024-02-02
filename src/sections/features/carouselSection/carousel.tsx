@@ -8,6 +8,7 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useMediaQuery, useTheme } from "@mui/material";
+import { useTranslation } from "react-i18next";
 interface CarouselProps {
   items: {
     id: number;
@@ -96,13 +97,23 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
   };
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { t } = useTranslation();
+
   return (
     <Box width={isMobile ? 250 : 400} height="auto">
       <Slider ref={(slider) => setSliderRef(slider)} {...settings}>
         {items.map((item) => (
           <Box key={item.id} textAlign="left">
-            <Typography variant="h4">{item.title}</Typography>
-            <Typography variant="body1">{item.content}</Typography>
+            <Typography
+              variant="h4"
+              marginBottom={2}
+              style={{ fontWeight: "bold" }}
+            >
+              {t(`BenefitsTitle.t-${item.id}`)}
+            </Typography>
+            <Typography variant="body1">
+              {t(`BenefitsContent.t-${item.id}`)}
+            </Typography>
           </Box>
         ))}
       </Slider>

@@ -13,6 +13,8 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useNavData } from "./config-navigation";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "./languajeSelector";
 
 interface HeaderProps {
   title: string;
@@ -24,6 +26,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
     threshold: 0,
   });
 
+  const { t } = useTranslation();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -57,6 +60,9 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
         {/* Contenedor del menú hamburguesa y títulos para versiones de escritorio */}
+
+        <LanguageSelector></LanguageSelector>
+
         <Box sx={{ display: "flex", alignItems: "center" }}>
           {/* Menú hamburguesa para dispositivos móviles */}
           <IconButton

@@ -1,0 +1,47 @@
+{
+
+  "BenefitsTitle":{
+    "t-1":"Encuentra a los Mejores",
+    "t-2":"Ahorra Tiempo",
+    "t-3":"Evalúa lo que Necesitas",
+    "t-4":"Seguimiento y Registros"
+    
+  },
+  "BenefitsContent":{
+    "t-1":"Las evaluaciones en línea de Evalart pueden preseleccionar candidatos, identificar a los mejores candidatos y reducir significativamente el número de candidatos que requieren una entrevista (las evaluaciones en línea te permiten filtrar hasta el 80% de los solicitantes, para que puedas enfocarte en el mejor 20%).",
+    "t-2":"Con Evalart, puedes optimizar tu proceso de selección y ahorrar el valioso tiempo del entrevistador. Puedes descartar hasta el 80% de los solicitantes y enfocarte solo en los más prometedores. Además, el proceso de envío, puntuación y registro de las evaluaciones es completamente automático, lo que también ahorra mucho tiempo.",
+    "t-3":"Evalúa las características requeridas para el puesto utilizando las bibliotecas de cuestionarios o creando tus propias evaluaciones: inteligencia, aptitud verbal, conocimientos, habilidades de programación... lo que necesites medir, puedes hacerlo con Evalart.",
+    "t-4":"En cualquier momento puedes ver el estado de todos tus procesos de evaluación. Cuántas personas han respondido, quién tiene la mejor puntuación... toda la información que necesitas está a solo un clic de distancia. La información se almacena automáticamente en Evalart, por lo que puedes buscar candidatos de procesos anteriores incluso años después para tus nuevos procesos."
+    
+  },
+
+  "FeaturesTitle": {
+    "t-1": "BIBLIOTECA DE PRUEBAS",
+    "t-2": "SOPORTA PREGUNTAS DE CODIFICACIÓN ACTUALES",
+    "t-3": "MÚLTIPLES TIPOS DE PRUEBAS",
+    "t-4": "DIFERENTES FORMATOS DE PREGUNTAS",
+    "t-5": "CREA TUS PROPIAS PRUEBAS",
+    "t-6": "INFORMES DETALLADOS",
+    "t-7": "DETECCIÓN DE FRAUDE",
+    "t-8": "MULTIIDIOMA",
+    "t-9": "PERSONALÍZALO",
+    "t-10": "INFORMES DETALLADOS",
+    "t-11": "VIGILANCIA EN LÍNEA",
+    "t-12": "API"
+  },
+  "FeaturesContent": {
+    "t-1": "Las evaluaciones en línea de Evalart pueden preseleccionar candidatos, identificar a los mejores candidatos y reducir significativamente el número de candidatos que requieren una entrevista (las evaluaciones en línea te permiten filtrar hasta el 80% de los solicitantes, para que puedas centrarte en el mejor 20%).",
+    "t-2": "Evalart proporciona pruebas de programación donde los candidatos deben escribir un programa en seudocódigo o en un lenguaje como Java o Python. Evalart evalúa automáticamente el código, valida los resultados y proporciona un informe detallado, lo que te permite tomar la mejor decisión y contratar al programador más habilidoso.",
+    "t-3": "Evalart te permite utilizar (y también construir) varios tipos de cuestionarios. Desde preguntas prácticas de programación, hasta pruebas de inteligencia y conocimientos, e incluso exámenes psicométricos como las pruebas DISC.",
+    "t-4": "Evalart permite pruebas de programación donde los candidatos deben escribir un programa en seudocódigo o en un lenguaje como Java o Python. El código es evaluado automáticamente por Evalart, validando los resultados y proporcionando un informe detallado que te permite tomar la mejor decisión y contratar al programador más habilidoso.",
+    "t-5": "Evalart cuenta con un potente Creador de Cuestionarios que te permite crear nuevas versiones de cuestionarios existentes o incluso crear nuevos desde cero, lo que te permite personalizar Evalart según tus necesidades específicas.",
+    "t-6": "Los cuestionarios de Evalart generan informes detallados de los resultados obtenidos por cada solicitante. Estos informes indican la puntuación obtenida (total y/o por categoría), la clasificación del solicitante según sus resultados (por ejemplo, 'Programador Avanzado en Java'), e incluyen gráficos de barras para una fácil visualización, así como detalles de cada pregunta.",
+    "t-7": "Evalart cuenta con un sofisticado sistema de detección de fraudes que puede identificar si el candidato ha cometido algún tipo de acción ilegal durante la prueba.",
+    "t-8": "La interfaz de usuario del administrador, así como la interfaz del cuestionario utilizada por los candidatos, admiten varios idiomas (actualmente inglés y español). Los cuestionarios y las preguntas también se pueden encontrar en estos dos idiomas.",
+    "t-9": "Evalart es altamente personalizable. Cuestionarios, correos electrónicos, preguntas, informes... todos tienen múltiples opciones y parámetros que permiten personalizarlos según las necesidades del usuario.",
+    "t-10": "Cada prueba de Evalart, tanto psicométrica como otros tipos de pruebas, genera informes detallados que te permiten evaluar y preseleccionar a los candidatos para tus procesos de selección. Estos informes son configurables, por lo que se pueden adaptar y personalizar según tus necesidades. No más corrección y transcripción manual de tus pruebas de selección, con Evalart solo se necesitan un par de clics para enviar tus pruebas y los resultados estarán disponibles en el sistema a medida que los candidatos respondan los cuestionarios.",
+    "t-11": "Evalart te permite monitorear opcionalmente a los candidatos a través de su cámara web. La inteligencia artificial de última generación analiza las imágenes y te advierte sobre cualquier actividad sospechosa, como una persona diferente tomando la prueba o más de una persona en pantalla.",
+    "t-12": "Evalart proporciona una API que te permite conectar tus aplicaciones con Evalart para realizar pruebas, recuperar resultados y más. La documentación de la API, el soporte en línea y un entorno de pruebas están disponibles para ayudarte con tu integración."
+  }
+
+}

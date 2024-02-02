@@ -7,6 +7,7 @@ import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import CustomCard from "./cardCarousel";
 import { useMediaQuery, useTheme } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 interface CarouselCardItem {
   id: number;
@@ -23,6 +24,7 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
   const [selectedItem, setSelectedItem] = useState<CarouselCardItem | null>(
     null
   );
+  const { t } = useTranslation();
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -119,6 +121,7 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
               {items.map((item) => (
                 <CustomCard
                   key={item.id}
+                  id={item.id}
                   title={item.title}
                   icon={item.iconName}
                   selected={selectedItem === item}
@@ -156,7 +159,7 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
                     fontWeight: "bold",
                   }}
                 >
-                  {selectedItem?.title}
+                  {t(`FeaturesTitle.t-${selectedItem?.id}`)}
                 </Typography>
               </Box>
             </Box>
@@ -164,7 +167,7 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
               {selectedItem && (
                 <div>
                   <Typography variant="body2" style={{ color: "#092E54" }}>
-                    {selectedItem.content}
+                    {t(`FeaturesContent.t-${selectedItem.id}`)}
                   </Typography>
                 </div>
               )}
@@ -203,7 +206,7 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
                     flex={1}
                     style={{ color: "#092E54", fontWeight: "bold" }}
                   >
-                    {selectedItem?.title}
+                    {t(`FeaturesTitle.t-${selectedItem?.id}`)}
                   </Typography>
                 </Box>
               </Box>
@@ -211,7 +214,7 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
                 {selectedItem && (
                   <div>
                     <Typography variant="body2" style={{ color: "#092E54" }}>
-                      {selectedItem.content}
+                      {t(`FeaturesContent.t-${selectedItem.id}`)}
                     </Typography>
                   </div>
                 )}
@@ -238,15 +241,16 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
               {items.map((item) => (
                 <CustomCard
                   key={item.id}
+                  id={item.id}
                   title={item.title}
-                  icon={item.iconName} // Assuming you have an icon component or library to render the icon
+                  icon={item.iconName}
                   selected={selectedItem === item}
                   onClick={() => handleCardClick(item)}
                 />
               ))}
             </Slider>
           </Box>
-          <Box display="flex" mt={2}>
+          <Box display="flex" mt={2} gap={2} paddingLeft={2}>
             <PrevArrow />
             <NextArrow />
           </Box>
