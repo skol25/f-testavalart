@@ -102,7 +102,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
         ))}
       </Slider>
       {/* Navigation arrows with click handlers */}
-      <Box display="flex" marginTop={10} gap={2}>
+      <Box display="flex" marginTop={1} gap={2}>
         <PrevArrow onClick={() => sliderRef?.slickPrev()} />
         <NextArrow onClick={() => sliderRef?.slickNext()} />
       </Box>
