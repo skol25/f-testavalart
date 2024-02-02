@@ -273,7 +273,7 @@ const CarouselSectionFeatures: React.FC<CarouselProps> = ({ items }) => {
             </Slider>
           </Box>
           {/* Navigation arrows for desktop view */}
-          <Box display="flex" mt={2} gap={2} paddingLeft={2}>
+          <Box display="flex" mt={2} gap={2} paddingLeft={9}>
             <PrevArrow />
             <NextArrow />
           </Box>
