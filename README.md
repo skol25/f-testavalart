@@ -46,6 +46,30 @@ The project structure is organized into `public` and `src` directories. The `pub
 
 - **Components:** Reusable components like the input select and centered text for subtitles within sections.
 
+# Challenge Overview
+
+## Approach
+
+The challenge involved redesigning and adding a personal touch without affecting the overall design and content of the page. I approached it by considering the use of carousels to organize the sections for both benefits and features. Since there were two sections in the view, I maintained this perspective but improved text organization using cards and carousels. This approach aimed to provide a dynamic focus and enhance the user experience, preventing users from feeling overwhelmed by a large amount of text.
+
+## Inspirations
+
+For this design, I drew inspiration from various websites with similar content to Evalart. I explored ideas from a content selector but opted for implementing cards in a carousel to display content. In the first section, instead of the typical carousel where everything changes, I chose to transition only the text section. This decision aimed to provide a smoother user experience, minimizing drastic changes for the user.
+
+## Design Decision Making
+
+To make design decisions, I utilized Figma, a tool I commonly use to showcase interfaces to clients. The goal was to maintain the original text while seamlessly integrating it into the existing page design.
+
+## Tools
+
+- Figma: Utilized for designing and presenting interfaces.
+
+## Mockup Proposal
+
+The challenge involved redesigning and adding a personal touch without affecting the overall design and content of the page. I approached it by considering the use of carousels to organize the sections for both benefits and features. Since there were two sections in the view, I maintained this perspective but improved text organization using cards and carousels. This approach aimed to provide a dynamic focus and enhance the user experience, preventing users from feeling overwhelmed by a large amount of text.
+
+The design decisions were made with the user in mind, aiming to provide a seamless and improved experience while respecting the original design of the page.
+
 ## Project Scalability
 
 The project structure is designed with scalability in mind. Within the `views` folder, additional views for the app can be added. The `sections` folder allows easy incorporation of sections within the views. This organized structure ensures a future-proof, comprehensible, and scalable project.
